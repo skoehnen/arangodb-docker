@@ -137,7 +137,7 @@ if [ "$1" = 'arangod' ]; then
 	    AUTHENTICATION="false"
     fi
 
-    set -- arangod --server.authentication="$AUTHENTICATION" "$@"
+    set -- arangod --http.trusted-origin "*" --server.authentication="$AUTHENTICATION" "$@"
 fi
 
 exec "$@"
